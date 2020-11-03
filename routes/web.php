@@ -14,3 +14,13 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/blogs',function(){
+    return view('.blogs.blogs');
+});
+Route::get('/blogs/laravel',function(){
+    return view('blogs.laravel');
+});
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
