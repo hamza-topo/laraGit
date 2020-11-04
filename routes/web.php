@@ -21,6 +21,8 @@ Route::get('/blogs/laravel',function(){
     return view('blogs.laravel');
 });
 
+Route::get('/get-blog-content','Web\MainController@getBlogContent');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
