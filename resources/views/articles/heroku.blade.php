@@ -46,7 +46,7 @@
         ok ,now we can create our app by the command line bellow:
     </p>
     <blockquote class="blockquote">
-        heroku auth:login
+        heroku create myapp
     </blockquote>
     <p>
         if you already done this from heroku platform (manually). you need to connect your local project to the exesting app on heroku ,write this commmand:
