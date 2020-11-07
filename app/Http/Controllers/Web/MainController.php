@@ -20,4 +20,18 @@ class MainController extends Controller
                break;
        }
     }
+
+    public function getTutorialContent(Request $request)
+    {
+        switch ($request->content) {
+            case '0':
+                $returnHTML=view('howTo.socialite')->render();
+                return response()->json(array('success' => true, 'html'=>$returnHTML));
+               break;
+            
+            default:
+                # code...
+                break;
+        }
+    }
 }

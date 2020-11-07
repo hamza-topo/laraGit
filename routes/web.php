@@ -15,13 +15,20 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/blogs',function(){
-    return view('.blogs.blogs');
+    return view('blogs.blogs');
+});
+Route::get('/tutorials',function(){
+    return view('tutorials.tutorials');
+});
+Route::get('/tutorials/socialite',function(){
+    return view('tutorials.socialite');
 });
 Route::get('/blogs/laravel',function(){
     return view('blogs.laravel');
 });
 
 Route::get('/get-blog-content','Web\MainController@getBlogContent');
+Route::get('/get-tutorial-content','Web\MainController@getTutorialContent');
 
 Auth::routes();
 
