@@ -73,8 +73,8 @@
 
                 <div class="links">
                     <a href="{{url('/blogs')}}">{{__('Blogs')}}</a>
-                    <a href="{{url('/tutorials')}}">{{__('Who am I ?')}}</a>
-                    <a href="{{url('/about')}}">{{__('Tutorials')}}</a>
+                    <a href="{{url('/about ')}}">{{__('Who am I ?')}}</a>
+                    <a href="{{url('/tutorials')}}">{{__('Tutorials')}}</a>
                     <a href="https://github.com/hamza-topo/laraGit" target="_blank">GitHub</a>
                 </div>
             </div>
