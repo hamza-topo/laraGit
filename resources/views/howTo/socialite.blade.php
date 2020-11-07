@@ -19,9 +19,9 @@
     <p>
         I assume that you already know how to create a new laravel project ,but in case you don't know that's the commande line :
     </p>
-    <blockquote class="blockquote">
+    <code>
         composer create-project --prefer-dist laravel/laravel lara-socialite "6.0.*"
-    </blockquote>
+    </code>
 </div>
 <div class="2">
     <strong>2-Set up database configuration :</strong>
@@ -35,30 +35,30 @@
     <p>
         use the commande line to install the package :
     </p>
-    <blockquote class="blockquote">
+    <code>
         composer require laravel/socialite
-    </blockquote>
+    </code>
 </div>
 <div class="4">
     <strong>4-Laravel socialite configuration :</strong>
     <p>
         Once the installation is finished ,go to config/services.php and add the following code at the end of the file :
     </p>
-    <blockquote class="blockquote">
+    <code>
         'facebook' => [
         'client_id' => env('FACEBOOK_CLIENT_ID'),
         'client_secret' => env('FACEBOOK_CLIENT_SECRET'),
         'redirect' => env('FACEBOOK_REDIRECT_URL'),
         ],
-    </blockquote>
+    </code>
     <p>
         as you can see i prefere to call all the constantes from .env file ,which means we have to define this parametres in .env file :
     </p>
-    <blockquote class="blockquote">
+    <code>
         FACEBOOK_CLIENT_ID=
         FACEBOOK_CLIENT_SECRET=
         FACEBOOK_REDIRECT_URL='http://localhost:8000/login/facebook/callback'
-    </blockquote>
+    </code>
     <p>
         just let FACEBOOK_CLIENT_ID & FACEBOOK_CLIENT_SECRET empty we will get back to this soon .
     </p>
@@ -108,21 +108,21 @@
 <p>
     Once you have done and the facebook aplication created , copy the the parametres and paste it in the .env file :
 </p>
-<blockquote class="blockquote">
+<code>
     FACEBOOK_CLIENT_ID=359288421xxxxxxxxxxxxxxxx
     FACEBOOK_CLIENT_SECRET=f527bc0bb50c144xxxxxxxxxxxxxxx
     FACEBOOK_REDIRECT_URL='http://localhost:8000/login/facebook/callback'
-</blockquote>
+</code>
 </div>
 <div class="6">
     <strong>6-Routing :</strong>
     <p>
         Following the laravel documentation for socialite package we will notice that there is 2 routes used :
     </p>
-    <blockquote class="blockquote">
+    <code>
         Route::get('/login/facebook', 'Auth\LoginController@redirectToProvider');
         Route::get('/login/facebook/callback', 'Auth\LoginController@handleProviderCallback');
-    </blockquote>
+    </code>
 
     <p>
         The redirect method takes care of sending the user to the OAuth provider
@@ -135,51 +135,53 @@
     <p>
         We will modify the login view (views/auth/login.blade.php) ;
     </p>
-    <blockquote class="blockquote">
+    <samp>
         <a class="btn btn-link" href="{{ url('/login/facebook') }}">
             {{ __('Login with Facebook?') }}
         </a>
-    </blockquote>
+    </samp>
 </div>
 
 <div class="8">
     <strong>8-Controller (logique) : :</strong>
     <p>
         Ok we are close to finish , we just need to add the code bellow inside loginController file :
+        <p>don't forget to use the Auth facade and User elequoent .</p>
+        
     </p>
-    <blockquote class="blockquote">
-        /**
-        * Redirect the user to the facebook authentication page.
-        *
-        * @return \Illuminate\Http\Response
-        */
-        public function redirectToProvider()
-        {
+    <code>
+        <code> /**</code><br>
+        <code>   * Redirect the user to the facebook authentication page.</code><br>
+        <code> *</code><br>
+        <code> * @return \Illuminate\Http\Response</code><br>
+        <code> */</code><br>
+        <code> public function redirectToProvider()
+         {
         return Socialite::driver('facebook')->redirect();
-        }
-        /**
-        * Obtain the user information from facebook.
-        *
-        * @return \Illuminate\Http\Response
-        */
-        public function handleProviderCallback()
-        {
-        $user_provider = Socialite::driver('facebook')->user();
-        // dd($user_provider,$user_provider->getAvatar());
-        $user = $user = User::firstOrCreate(
-        [
-        'email' => $user_provider->getEmail()
-        ],
-        [
-        'name' => $user_provider->getName(),
-        'password' => Hash::make($user_provider->getName()),
-        'email' => $user_provider->getEmail(),]
-        );
-        Auth::login($user);
-        return redirect()->route('home');
-        }
+        }</code><br>
+        <code> /**</code><br>
+        <code> * Obtain the user information from facebook.</code><br>
+        <code> *</code><br>
+        <code> * @return \Illuminate\Http\Response</code><br>
+        <code> */</code><br>
+        <code>public function handleProviderCallback()</code><br>
+        {</code><br>
+            <code>$user_provider = Socialite::driver('facebook')->user();</code><br>
+            <code>// dd($user_provider,$user_provider->getAvatar());</code><br>
+            <code>$user = $user = User::firstOrCreate(</code><br>
+            <code> [</code><br>
+            <code>'email' => $user_provider->getEmail()</code><br>
+            <code>],</code><br>
+            <code>[</code><br>
+            <code>'name' => $user_provider->getName(),</code><br>
+            <code>'password' => Hash::make($user_provider->getName()),</code><br>
+            <code>'email' => $user_provider->getEmail(),]</code><br>
+            <code>);</code><br>
+            <code>Auth::login($user);</code><br>
+            <code>return redirect()->route('home');</code><br>
+            <code> }</code><br>
 
-    </blockquote>
+    
 </div>
 <div>
     <p>
