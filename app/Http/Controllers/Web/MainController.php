@@ -14,24 +14,14 @@ class MainController extends Controller
                 $returnHTML=view('articles.heroku')->render();
                 return response()->json(array('success' => true, 'html'=>$returnHTML));
                break;
+            case '1':
+                $returnHTML=view('articles.socialite')->render();
+                return response()->json(array('success' => true, 'html'=>$returnHTML));
+            break;
            
            default:
                # code...
                break;
        }
-    }
-
-    public function getTutorialContent(Request $request)
-    {
-        switch ($request->content) {
-            case '0':
-                $returnHTML=view('howTo.socialite')->render();
-                return response()->json(array('success' => true, 'html'=>$returnHTML));
-               break;
-            
-            default:
-                # code...
-                break;
-        }
     }
 }

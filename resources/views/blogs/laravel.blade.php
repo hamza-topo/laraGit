@@ -17,7 +17,12 @@
                             <div class="bd-example">
                                 <summary onclick="setBlogTile('Deploy Laravel Project On Heroku',0)">
                                     <strong>
-                                        Deploy Laravel Project On Heroku
+                                    <a href="#">1-Deploy Laravel Project On Heroku</a>
+                                    </strong>
+                                </summary>
+                                <summary onclick="setBlogTile('How to use Laravel Socialite Package ?',1)">
+                                    <strong>
+                                        <a href="#">2-How to use Laravel Socialite Package ?</a>
                                     </strong>
                                 </summary>
                             </div>
