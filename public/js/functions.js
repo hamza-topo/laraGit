@@ -2,32 +2,12 @@ function setBlogTile(title,content)
 {
    getBlogContent(content);
    $('#card-header-title').html('<strong id="title">'+title+'</strong>');
-  
-
 }
 
 function getBlogContent(content)
 {
     $.ajax({
         url:'/get-blog-content',
-        type:'GET',
-        data:{content:content},
-        success:function(data)
-        {
-             $('#content').html(data.html);
-        }
-    });
-}
-function setTutorialTile(title,content)
-{
-    getTutorialContent(content);
-    $('#card-header-title').html('<strong id="title">'+title+'</strong>');
-}
-
-function getTutorialContent(content)
-{
-    $.ajax({
-        url:'/get-tutorial-content',
         type:'GET',
         data:{content:content},
         success:function(data)
