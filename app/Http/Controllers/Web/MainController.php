@@ -18,6 +18,10 @@ class MainController extends Controller
                 $returnHTML=view('articles.socialite')->render();
                 return response()->json(array('success' => true, 'html'=>$returnHTML));
             break;
+            case '2':
+                $returnHTML=view('articles.events')->render();
+                return response()->json(array('success' => true, 'html'=>$returnHTML));
+            break;
            
            default:
                # code...
