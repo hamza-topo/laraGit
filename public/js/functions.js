@@ -1,3 +1,7 @@
+document.addEventListener("DOMContentLoaded", function(event) { 
+    setBlogTile('Deploy Laravel Project On Heroku',0)
+  });
+
 function setBlogTile(title,content)
 {
    getBlogContent(content);

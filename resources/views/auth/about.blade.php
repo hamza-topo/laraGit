@@ -14,9 +14,10 @@
                                 <img src="{{asset('img/about-me.jpg')}}" class="img-fluid img-thumbnail" style="border-radius: 50%;" alt="...">
                             </picture>
                             <div style="text-align: center; align-items: center;" >
-                            <a>Facebook</a>
-                            <a>Twitter</a>
-                            <a>Linkedin</a>
+                            <a href="https://www.facebook.com/hamza1995Topo/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://twitter.com/Ourobor70307628" target="_blank"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.linkedin.com/in/ait-sidi-said-hamza-442aa7170/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://github.com/hamza-topo" target="_blank"><i class="fab fa-github"></i></a>
                         </div>
                         </div>
                         <div class="col-md-8">
