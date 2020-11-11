@@ -24,6 +24,15 @@ Route::get('/get-blog-content', 'Web\MainController@getBlogContent');
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/clear', function () {
+
+    Artisan::call('cache:clear');
+    Artisan::call('config:clear');
+    Artisan::call('config:cache');
+    Artisan::call('view:clear');
+
+    return "Cleared!";
+});
 
 //Talk about Events 
 //Multiple Auth In Laravel 
