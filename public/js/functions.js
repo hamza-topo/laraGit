@@ -17,13 +17,3 @@ function getBlogContent(content)
     });
 }
 
-$(function(){
-    $(window).on('load', function(){
-      $('.img-lazy').each(function(){
-        var $this = $(this),
-            src = $(this).data('src');
-        $this.attr('src', src);
-        console.log(src);
-      });
-    });
-  });

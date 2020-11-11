@@ -19,7 +19,7 @@ class MainController extends Controller
                 return response()->json(array('success' => true, 'html'=>$returnHTML));
             break;
             case '2':
-                $returnHTML=view('articles.events')->render();
+                $returnHTML=view('articles.observers')->render();
                 return response()->json(array('success' => true, 'html'=>$returnHTML));
             break;
            

@@ -13,6 +13,11 @@
                             ​<picture>
                                 <img src="{{asset('img/about-me.jpg')}}" class="img-fluid img-thumbnail" style="border-radius: 50%;" alt="...">
                             </picture>
+                            <div style="text-align: center; align-items: center;" >
+                            <a>Facebook</a>
+                            <a>Twitter</a>
+                            <a>Linkedin</a>
+                        </div>
                         </div>
                         <div class="col-md-8">
                             <p>Hamza or Topo ,or whatever you like to call me !</p>

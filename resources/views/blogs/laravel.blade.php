@@ -25,10 +25,11 @@
                                         <a href="#">2-How to use Laravel Socialite Package ?</a>
                                     </strong>
                                 </summary>
-                                <summary onclick="setBlogTile('Laravel Events and Observers',2)">
+                                <summary onclick="setBlogTile('Laravel Events and Observers',2  )">
                                     <strong>
-                                        <a href="#">3-Laravel Events and Observers (will be published this night)</a>
+                                        <a href="#">3-Laravel Events and Observers (Observers)</a>
                                     </strong>
+
                                 </summary>
                             </div>
                         </div>
